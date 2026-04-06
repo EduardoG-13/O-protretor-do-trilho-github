@@ -265,7 +265,7 @@ class Bilheteria extends BaseScene {
         });
         
         // Adiciona todos os elementos ao container
-        this.caixaDialogo.add([retanguloAvancarDialogo, fundoCaixaDialogo, faixaNomeDialogo, this.retrato, this.txtNome, this.txtFala]);
+        this.caixaDialogo.add([retanguloAvancarDialogo, this.retrato, fundoCaixaDialogo, faixaNomeDialogo, this.txtNome, this.txtFala]);
     }
 
     // Função principal que controla o fluxo da conversa a cada clique
