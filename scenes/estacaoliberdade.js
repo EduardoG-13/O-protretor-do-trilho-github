@@ -22,7 +22,7 @@ class EstacaoLiberdade extends BaseScene {
         this.load.image('tremTrilho', './assets/Object/trem-inicial.png');
         this.load.image('tremMapa', './assets/Object/trem-mapa.png');
 
-        this.load.audio('trilhaFundoLiberdade', './assets/Sons/bilheteriaEtransições.mp3');  
+        this.load.audio('trilhaFundoLiberdade', './assets/Sons/bilheteriaEtransicoes.mp3');  
         this.load.audio('click', './assets/Sons/click.wav');     
     }
 

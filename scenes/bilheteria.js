@@ -24,7 +24,7 @@ class Bilheteria extends BaseScene {
         this.load.image('tremMapa', './assets/Object/trem-mapa.png'); // trem que se movimenta no mapa
         this.load.audio('npc_dialogo', './assets/Sons/npc-dialog.mp3');
 
-        this.load.audio('trilhaFundoBilheteria', './assets/Sons/bilheteriaEtransições.mp3');  
+        this.load.audio('trilhaFundoBilheteria', './assets/Sons/bilheteriaEtransicoes.mp3');  
         this.load.audio('click', './assets/Sons/click.wav');    
     }
 
@@ -229,22 +229,29 @@ class Bilheteria extends BaseScene {
 
         // Animação de fala do bilheteiro (movimenta a boca)
         this.retrato.anims.create({
-            key: 'falar',
+            key: 'bilheteiro-falar',
             frames: this.anims.generateFrameNumbers('bilheteiro', { start: 0, end: 1 }),
             frameRate: 8,
             repeat: -1
         })
 
-        let graficoCaixaDialogo = this.add.graphics();
-        graficoCaixaDialogo.fillStyle(0x002d42, 0.95);
-        graficoCaixaDialogo.lineStyle(4, 0x00ffcc, 1);
-        graficoCaixaDialogo.fillRoundedRect(margem, altura - alturaCaixa - margem, largura - (margem*2), alturaCaixa, 15);
-        graficoCaixaDialogo.strokeRoundedRect(margem, altura - alturaCaixa - margem, largura - (margem*2), alturaCaixa, 15);
+        const fundoCaixaDialogo = this.add.rectangle(
+            largura / 2,
+            altura - alturaCaixa / 2 - margem,
+            largura - (margem * 2),
+            alturaCaixa,
+            0x002d42,
+            0.95
+        ).setStrokeStyle(4, 0x00ffcc, 1);
 
-        // Fundo para o nome do personagem
-        graficoCaixaDialogo.fillStyle(0x004d66, 1);
-        graficoCaixaDialogo.fillRoundedRect(margem, altura - alturaCaixa - margem - altura * 0.04, largura * 0.2, altura * 0.06, 10);
-        graficoCaixaDialogo.strokeRoundedRect(margem, altura - alturaCaixa - margem - altura * 0.04, largura * 0.2, altura * 0.06, 10);
+        const faixaNomeDialogo = this.add.rectangle(
+            margem + (largura * 0.2) / 2,
+            altura - alturaCaixa - margem - altura * 0.01,
+            largura * 0.2,
+            altura * 0.06,
+            0x004d66,
+            1
+        ).setStrokeStyle(4, 0x00ffcc, 1);
 
         // Textos (guardados nas variáveis da classe)
         this.txtNome = this.add.text(margem + 20, altura - alturaCaixa - margem - 22, "", {
@@ -258,7 +265,7 @@ class Bilheteria extends BaseScene {
         });
         
         // Adiciona todos os elementos ao container
-        this.caixaDialogo.add([retanguloAvancarDialogo, this.retrato, graficoCaixaDialogo, this.txtNome, this.txtFala]);
+        this.caixaDialogo.add([retanguloAvancarDialogo, fundoCaixaDialogo, faixaNomeDialogo, this.retrato, this.txtNome, this.txtFala]);
     }
 
     // Função principal que controla o fluxo da conversa a cada clique
@@ -299,7 +306,7 @@ class Bilheteria extends BaseScene {
                 this.retrato.setTexture('bilheteiro');   
                 this.retrato.setPosition(largura * 0.95, altura - alturaCaixa - altura * 0.3);
                 this.retrato.setScale(this.largura / 500);
-                this.retrato.anims.play('falar');
+                this.retrato.anims.play('bilheteiro-falar');
                 this.retrato.setFlipX(true);
 
             }

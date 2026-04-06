@@ -22,7 +22,7 @@ class EstacaoLuz extends BaseScene {
         this.load.image('tremTrilho', './assets/Object/trem-inicial.png');
         this.load.image('tremMapa', './assets/Object/trem-mapa.png');
 
-        this.load.audio('trilhaFundoLuz', './assets/Sons/bilheteriaEtransições.mp3');  
+        this.load.audio('trilhaFundoLuz', './assets/Sons/bilheteriaEtransicoes.mp3');  
         this.load.audio('click', './assets/Sons/click.wav');        
     }
 

@@ -220,9 +220,9 @@ class Conhecimento extends BaseScene {
 
     // Inicialização das animações do personagem (falar, rir e dúvida)
     criarAnimacoes() {
-        if (!this.anims.exists('falar')) {
+        if (!this.anims.exists('apresentador-falar')) {
             this.anims.create({
-                key: 'falar', 
+                key: 'apresentador-falar', 
                 frames: this.anims.generateFrameNumbers('apresentadorFala', { start: 0, end: 1 }),
                 frameRate: 6, repeat: -1 
             });
@@ -262,7 +262,7 @@ class Conhecimento extends BaseScene {
 
         this.apresentador.setTexture('apresentadorFala');
         this.textoPergunta.setText("").setVisible(true);
-        this.apresentador.play('falar');
+        this.apresentador.play('apresentador-falar');
         
         this.caixasResposta.forEach((caixaRespostaImg, i) => {
             caixaRespostaImg.setTexture(`respostaAzul${i+1}`).setVisible(false).disableInteractive();
