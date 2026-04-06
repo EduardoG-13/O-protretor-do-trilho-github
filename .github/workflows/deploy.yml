@@ -4,7 +4,7 @@ name: Deploy to GitHub Pages
 on:
   # Executa no push para a branch principal
   push:
-    branches: ["main"]
+    branches: ["master"]
 
   # Permite executar manualmente pela aba Actions
   workflow_dispatch:
