@@ -1,0 +1,22 @@
+/* style.css */
+@font-face {
+    font-family: 'Pixel';
+    src: url('../assets/Fontes/PixelDraft-Regular.ttf');
+}
+
+body, html {
+        margin: 0;
+        padding: 0;
+        width: 100vw;  /* Trava a largura em 100% da janela */
+        height: 100vh; /* Trava a altura em 100% da janela */
+        background-color: #000000; 
+        overflow: hidden; /* Remove as barras de rolagem */
+        display: flex;
+        justify-content: center; /* Centraliza na horizontal perfeitamente */
+        align-items: center;     /* Centraliza na vertical perfeitamente */
+    }
+
+    /* Garante que o container do DOM do Phaser não crie margens fantasmas */
+    canvas {
+        display: block;
+    }
