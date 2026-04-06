@@ -40,7 +40,7 @@ var config = {
     },
 
     // Definição das cenas
-    scene: [ Cidadania, TelaInicial, SelecaoPersonagem, Bilheteria, Escada, FaixaAmarela, EstacaoLuz, EstacaoSe, ComercioIlegal, EstacaoLiberdade, Conhecimento ]
+    scene: [TelaInicial, SelecaoPersonagem, Bilheteria, Escada, FaixaAmarela, Cidadania, EstacaoLuz, EstacaoSe, ComercioIlegal, EstacaoLiberdade, Conhecimento]
 };
 
 // Cria uma nova instância do jogo usando a classe do framework Phaser, além de utilizar o objeto config como parâmetro do game. Essa linha inicializa o jogo.
